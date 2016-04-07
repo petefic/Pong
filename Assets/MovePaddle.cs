@@ -8,7 +8,7 @@ public class MovePaddle : MonoBehaviour {
 	void Update()
     {
         float zPos = transform.position.z + (Input.GetAxis("Vertical") * speed);
-        Vector3 paddlePos = new Vector3(-15f, 1.1f, Mathf.Clamp(zPos, -7.5f, 7.5f));
+        Vector3 paddlePos = new Vector3(-15f, 1f, Mathf.Clamp(zPos, -7.5f, 7.5f));
         transform.position = paddlePos;
     }
 }
