@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AI : MonoBehaviour {
+public class AI : MonoBehaviour
+{
 
     public float speed;
 
@@ -36,6 +37,7 @@ public class AI : MonoBehaviour {
     public void Reset()
     {
         transform.position = new Vector3(15F, 1F, 0F);
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
 }

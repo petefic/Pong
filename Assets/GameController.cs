@@ -2,26 +2,40 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public GameObject ball;
+    public GameObject player;
     public GameObject cpu;
+
     public Text playerScoreText;
     public Text cpuScoreText;
+
+    public float countdownLength = 2F;
+    public Text countdownText;
+
+    private bool counting;
+    private float timer;
 
     private int playerScore;
     private int cpuScore;
 
     void Start()
     {
-        NewBall();
+        StartCountdown();
     }
 
-    public void NewBall()
+    private void StartCountdown()
+    {
+        timer = countdownLength;
+        counting = true;
+    }
+
+    private void NewBall()
     {
         //create ball
         Instantiate(ball, new Vector3(0, 0.5F, 0), Quaternion.identity);
-        Ball ballObj = ball.GetComponent<Ball>();
     }
 
     public void Goal(string scoredOn)
@@ -40,8 +54,24 @@ public class GameController : MonoBehaviour {
         GameObject ball = GameObject.FindGameObjectWithTag("Ball");
         Destroy(ball);
 
-        NewBall();
+        StartCountdown();
         cpu.GetComponent<AI>().Reset();
+        player.GetComponent<MovePaddle>().Reset();
+    }
+
+    void Update()
+    {
+        if (counting)
+        {
+            timer -= Time.deltaTime;
+            countdownText.text = timer.ToString() + 1;
+            if (timer <= 0)
+            {
+                counting = false;
+                countdownText.text = "";
+                NewBall();
+            }
+        }
     }
 
 }
