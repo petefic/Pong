@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 171678, guid: 692083e55f40f7e4ea9a85473468ec3b, type: 2}
+  cpu: {fileID: 1777744985}
   playerScoreText: {fileID: 178629617}
   cpuScoreText: {fileID: 1836525510}
 --- !u!1 &672696293
@@ -901,6 +902,7 @@ GameObject:
   - 65: {fileID: 1777744988}
   - 23: {fileID: 1777744987}
   - 54: {fileID: 1777744990}
+  - 114: {fileID: 1777744991}
   m_Layer: 0
   m_Name: CPU
   m_TagString: Paddle
@@ -974,12 +976,24 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 118
   m_CollisionDetection: 0
+--- !u!114 &1777744991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1777744985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39125d613b658d64db82e79495971a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &1836525508
 GameObject:
   m_ObjectHideFlags: 0

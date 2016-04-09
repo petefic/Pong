@@ -20,6 +20,11 @@ public class Ball : MonoBehaviour {
         GetComponent<Rigidbody>().velocity = initalDir * speed;
     }
 
+    public void Update()
+    {
+        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * speed;
+    }
+
     void OnCollisionEnter(Collision col)
     {
         int x = 0;

@@ -5,6 +5,7 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
     public GameObject ball;
+    public GameObject cpu;
     public Text playerScoreText;
     public Text cpuScoreText;
 
@@ -40,6 +41,7 @@ public class GameController : MonoBehaviour {
         Destroy(ball);
 
         NewBall();
+        cpu.GetComponent<AI>().Reset();
     }
 
 }
