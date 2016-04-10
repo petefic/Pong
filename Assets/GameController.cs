@@ -11,20 +11,20 @@ public class GameController : MonoBehaviour
 
     public Text playerScoreText;
     public Text cpuScoreText;
+    public Text newGameText;
 
     public int countdownLength = 2;
     public Text countdownText;
     public bool counting = false;
+
+    public AudioSource goalHorn;
 
     private float timer;
 
     private int playerScore;
     private int cpuScore;
 
-    void Start()
-    {
-        StartCountdown();
-    }
+    private bool gameOver = true;
 
     private void StartCountdown()
     {
@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour
 
     public void Goal(string scoredOn)
     {
+        goalHorn.Play();
+
         if (scoredOn == "Player")
         {
             cpuScore++;
@@ -54,7 +56,12 @@ public class GameController : MonoBehaviour
         GameObject ball = GameObject.FindGameObjectWithTag("Ball");
         Destroy(ball);
 
-        if (!CheckForWin())
+        if (CheckForWin())
+        {
+            gameOver = true;
+            newGameText.text = "Press any key to start a new game...";
+        }
+        else
         {
             StartCountdown();
             cpu.GetComponent<AI>().Reset();
@@ -75,6 +82,11 @@ public class GameController : MonoBehaviour
                 NewBall();
             }
         }
+
+        if (gameOver && Input.anyKey)
+        {
+            NewGame();
+        }
     }
 
     private bool CheckForWin()
@@ -93,6 +105,20 @@ public class GameController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private void NewGame()
+    {
+        gameOver = false;
+        playerScore = 0;
+        playerScoreText.text = playerScore.ToString();
+        cpuScore = 0;
+        cpuScoreText.text = cpuScore.ToString();
+        newGameText.text = "";
+
+        StartCountdown();
+        cpu.GetComponent<AI>().Reset();
+        player.GetComponent<MovePaddle>().Reset();
     }
 
 }
