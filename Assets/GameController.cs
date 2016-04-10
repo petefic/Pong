@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     public Text playerScoreText;
     public Text cpuScoreText;
 
-    public float countdownLength = 2F;
+    public int countdownLength = 2;
     public Text countdownText;
     public bool counting = false;
 
@@ -54,9 +54,12 @@ public class GameController : MonoBehaviour
         GameObject ball = GameObject.FindGameObjectWithTag("Ball");
         Destroy(ball);
 
-        StartCountdown();
-        cpu.GetComponent<AI>().Reset();
-        player.GetComponent<MovePaddle>().Reset();
+        if (!CheckForWin())
+        {
+            StartCountdown();
+            cpu.GetComponent<AI>().Reset();
+            player.GetComponent<MovePaddle>().Reset();
+        }
     }
 
     void Update()
@@ -64,13 +67,31 @@ public class GameController : MonoBehaviour
         if (counting)
         {
             timer -= Time.deltaTime;
-            countdownText.text = timer.ToString() + 1;
+            countdownText.text = Mathf.Round(timer + 1).ToString();
             if (timer <= 0)
             {
                 counting = false;
                 countdownText.text = "";
                 NewBall();
             }
+        }
+    }
+
+    private bool CheckForWin()
+    {
+        if (playerScore == 5)
+        {
+            countdownText.text = "You Win!";
+            return true;
+        }
+        else if (cpuScore == 5)
+        {
+            countdownText.text = "You Lose";
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

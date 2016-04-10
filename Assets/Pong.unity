@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 219829710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 40.5, y: 4, z: 0.5}
+  m_LocalScale: {x: 40.5, y: 5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2100303973}
   m_RootOrder: 4
@@ -244,7 +244,6 @@ GameObject:
   - 33: {fileID: 344506341}
   - 64: {fileID: 344506340}
   - 23: {fileID: 344506339}
-  - 65: {fileID: 344506342}
   m_Layer: 0
   m_Name: Player Goal
   m_TagString: Goal
@@ -309,18 +308,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 344506337}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &344506342
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 344506337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 2, z: 10}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &432856895
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +401,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 85, y: 175}
+  m_SizeDelta: {x: 1000, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &591597785
 MonoBehaviour:
@@ -437,7 +424,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_FontSize: 140
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -499,7 +486,7 @@ MonoBehaviour:
   cpu: {fileID: 1777744985}
   playerScoreText: {fileID: 178629617}
   cpuScoreText: {fileID: 1836525510}
-  countdownLength: 3
+  countdownLength: 2
   countdownText: {fileID: 591597785}
   counting: 0
 --- !u!1 &672696293
@@ -768,7 +755,7 @@ GameObject:
   - 65: {fileID: 1431748556}
   - 23: {fileID: 1431748555}
   m_Layer: 0
-  m_Name: W Wall
+  m_Name: E Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,7 +769,7 @@ Transform:
   m_GameObject: {fileID: 1431748553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 4, z: 20.5}
+  m_LocalScale: {x: 0.5, y: 5, z: 20.5}
   m_Children: []
   m_Father: {fileID: 2100303973}
   m_RootOrder: 5
@@ -945,7 +932,7 @@ GameObject:
   - 65: {fileID: 1466591054}
   - 23: {fileID: 1466591053}
   m_Layer: 0
-  m_Name: E Wall
+  m_Name: W Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,7 +946,7 @@ Transform:
   m_GameObject: {fileID: 1466591051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 4, z: 20.5}
+  m_LocalScale: {x: 0.5, y: 5, z: 20.5}
   m_Children: []
   m_Father: {fileID: 2100303973}
   m_RootOrder: 6
@@ -1297,7 +1284,7 @@ Transform:
   m_GameObject: {fileID: 1880399665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 40.5, y: 4, z: 0.5}
+  m_LocalScale: {x: 40.5, y: 5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2100303973}
   m_RootOrder: 3
@@ -1357,7 +1344,6 @@ GameObject:
   - 33: {fileID: 1958800971}
   - 64: {fileID: 1958800970}
   - 23: {fileID: 1958800969}
-  - 65: {fileID: 1958800972}
   m_Layer: 0
   m_Name: CPU Goal
   m_TagString: Goal
@@ -1422,18 +1408,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1958800967}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &1958800972
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1958800967}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 2, z: 10}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1973347347
 GameObject:
   m_ObjectHideFlags: 0
