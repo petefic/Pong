@@ -4,10 +4,13 @@ using System.Collections;
 public class Ball : MonoBehaviour
 {
 
-    public float speed = 30; 
+    public float speed = 30;
+    private AudioSource audio;
 
     public void Awake()
     {
+        audio = GetComponent<AudioSource>();
+        
         //calc launch direction
         int x = Random.Range(0, 2);
         if (x == 0)
@@ -39,6 +42,7 @@ public class Ball : MonoBehaviour
             {
                 x = -1;
             }
+            audio.Play();
         }      
         else if (col.gameObject.tag == "Goal")
         {
@@ -55,6 +59,7 @@ public class Ball : MonoBehaviour
         }
         else
         {
+            audio.Play();
             return;
         }
 

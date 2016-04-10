@@ -14,8 +14,8 @@ public class GameController : MonoBehaviour
 
     public float countdownLength = 2F;
     public Text countdownText;
+    public bool counting = false;
 
-    private bool counting;
     private float timer;
 
     private int playerScore;
