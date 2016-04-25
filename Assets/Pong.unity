@@ -889,6 +889,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1436512128}
   - 82: {fileID: 1436512127}
+  - 164: {fileID: 1436512129}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -907,7 +908,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bfe611feb21e1ca40a2ec5421674c439, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -982,6 +983,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!164 &1436512129
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436512126}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -698
+  m_RoomRolloff: 0
+  m_DecayTime: 7.24
+  m_DecayHFRatio: 0.33
+  m_ReflectionsLevel: -1166
+  m_ReverbLevel: 16
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 10
 --- !u!1 &1466591051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1090,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1554345474}
   - 82: {fileID: 1554345473}
+  - 164: {fileID: 1554345475}
   m_Layer: 0
   m_Name: Horn
   m_TagString: Untagged
@@ -1159,6 +1184,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!164 &1554345475
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554345472}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -698
+  m_RoomRolloff: 0
+  m_DecayTime: 7.24
+  m_DecayHFRatio: 0.33
+  m_ReflectionsLevel: -1166
+  m_ReverbLevel: 16
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 10
 --- !u!1 &1777744985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1789,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press any key to start a new game...
+  m_Text: "Press any key \nto start a new game..."
 --- !u!222 &1989050698
 CanvasRenderer:
   m_ObjectHideFlags: 0
